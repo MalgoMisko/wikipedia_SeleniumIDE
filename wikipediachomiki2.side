@@ -1,0 +1,73 @@
+{
+  "id": "132fe40e-d1a5-474b-be75-83623219962d",
+  "version": "2.0",
+  "name": "wikipedia chomiki",
+  "url": "https://pl.wikipedia.org",
+  "tests": [{
+    "id": "ee217860-9bab-4df5-ad94-67058b6039bf",
+    "name": "wikipedia chomiki",
+    "commands": [{
+      "id": "03bb4d06-285b-463f-9a70-0e8d263319bd",
+      "comment": "",
+      "command": "open",
+      "target": "/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "31d60a0a-c5b6-462a-a6ac-bf0a851a1dd7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "498ea6af-8050-4ffe-906f-74d28147b090",
+      "comment": "",
+      "command": "type",
+      "target": "name=search",
+      "targets": [
+        ["name=search", "name"],
+        ["css=.cdx-text-input__input", "css:finder"],
+        ["xpath=//input[@name='search']", "xpath:attributes"],
+        ["xpath=//form[@id='searchform']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "chomiki"
+    }, {
+      "id": "663fdec1-460e-44bc-99f0-f4580d62b499",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=search",
+      "targets": [
+        ["name=search", "name"],
+        ["css=.cdx-text-input__input", "css:finder"],
+        ["xpath=//input[@name='search']", "xpath:attributes"],
+        ["xpath=//form[@id='searchform']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "942e4b15-f15e-4fe7-8efc-7412bd804ce7",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.mw-page-title-main",
+      "targets": [
+        ["css=.mw-page-title-main", "css:finder"],
+        ["xpath=//h1[@id='firstHeading']/span", "xpath:idRelative"],
+        ["xpath=//h1/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Chomiki')]", "xpath:innerText"]
+      ],
+      "value": "Chomiki"
+    }]
+  }],
+  "suites": [{
+    "id": "bffe83bf-b220-489d-8173-da3e5c84cfdd",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["ee217860-9bab-4df5-ad94-67058b6039bf"]
+  }],
+  "urls": ["https://pl.wikipedia.org/"],
+  "plugins": []
+}
